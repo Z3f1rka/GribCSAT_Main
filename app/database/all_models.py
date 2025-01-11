@@ -1,0 +1,1 @@
+from database.models.shop_comments import ShopComments
