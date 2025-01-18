@@ -3,7 +3,7 @@ import datetime
 from sqlalchemy import BigInteger, DateTime, Text, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column
 
-from app.database.database import Base
+from app.db.database import Base
 
 
 class ShopComments(Base):
@@ -15,4 +15,3 @@ class ShopComments(Base):
     rating: Mapped[int] = mapped_column(BigInteger, nullable=False)
     created_at: Mapped[datetime.datetime] = mapped_column(DateTime)
     shop: Mapped[int] = mapped_column(BigInteger, ForeignKey("shops.id", ondelete="CASCADE"))
-    
