@@ -1,7 +1,7 @@
 import datetime
 
 from sqlalchemy import BigInteger, DateTime, String
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.database import Base
 
@@ -14,3 +14,4 @@ class User(Base):
     email: Mapped[str] = mapped_column(String, nullable=False)
     hashed_password: Mapped[str] = mapped_column(String, nullable=False)
     reg_date: Mapped[datetime.datetime] = mapped_column(DateTime, nullable=False, default=datetime.datetime.now())
+    hashes = relationship('Hash', back_populates='user_id', cascade='all, delete-orphan')
