@@ -1,4 +1,4 @@
-from sqlalchemy import BigInteger, String
+from sqlalchemy import BigInteger, String, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.db.database import Base
@@ -13,4 +13,4 @@ class Product(Base):
     # type orm to type.id
     article: Mapped[str] = mapped_column(String, nullable=False)
     file: Mapped[str]
-    # shop orm to shop.id
+    shop_id: Mapped[int] = mapped_column(BigInteger, ForeignKey("shops.id", ondelete="CASCADE"))
