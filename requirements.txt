@@ -36,7 +36,6 @@ pyflakes==3.2.0
 Pygments==2.18.0
 python-dotenv==1.0.1
 python-multipart==0.0.19
-pywin32==308
 PyYAML==6.0.2
 requests==2.32.3
 rich==13.9.4
