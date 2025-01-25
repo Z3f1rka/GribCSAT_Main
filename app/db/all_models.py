@@ -5,3 +5,4 @@ from app.db.models.product import Product
 from app.db.models.shop import Shop
 from app.db.models.visit import Visit
 from app.db.models.types import Types
+from app.db.models.surveys import Surveys
