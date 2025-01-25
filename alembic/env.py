@@ -11,8 +11,8 @@ from sqlalchemy import pool
 sys.path.append(os.path.join(sys.path[0], 'app'))
 
 from app.core.config import settings
-from app.database.database import Base
-from app.database.all_models import ShopComments
+from app.db.database import Base
+from app.db.all_models import ShopComments, User, Product, Shop, Hash
 
 
 # this is the Alembic Config object, which provides
