@@ -15,3 +15,5 @@ class User(Base):
     hashed_password: Mapped[str] = mapped_column(String, nullable=False)
     reg_date: Mapped[datetime.datetime] = mapped_column(DateTime, nullable=False, default=datetime.datetime.now())
     hashes = relationship('Hash', back_populates='user_id', cascade='all, delete-orphan')
+    visits = relationship('Visit', back_populates='user_id', cascade='all, delete-orphan')
+    product_lists = relationship('ProductList', back_populates='user_id', cascade='all, delete-orphan')

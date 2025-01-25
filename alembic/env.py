@@ -12,7 +12,7 @@ sys.path.append(os.path.join(sys.path[0], 'app'))
 
 from app.core.config import settings
 from app.db.database import Base
-from app.db.all_models import ShopComments, User, Product, Shop, Hash
+from app.db.all_models import *
 
 
 # this is the Alembic Config object, which provides
