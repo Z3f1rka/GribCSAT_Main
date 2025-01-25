@@ -15,3 +15,4 @@ class Product(Base):
     file: Mapped[str]
     shop_id: Mapped[int] = mapped_column(BigInteger, ForeignKey("shops.id", ondelete="CASCADE"))
     visits = relationship('Visit', back_populates='product_id', cascade='all, delete-orphan')
+    product_to_list = relationship('ProductToList', back_populates='product_id', cascade='all, delete-orphan')
