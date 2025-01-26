@@ -17,3 +17,4 @@ class User(Base):
     hashes = relationship('Hash', back_populates='user_id', cascade='all, delete-orphan')
     visits = relationship('Visit', back_populates='user_id', cascade='all, delete-orphan')
     product_lists = relationship('ProductList', back_populates='user_id', cascade='all, delete-orphan')
+    user_answer_id = relationship('UserAnswer', back_populates='user_id', cascade='all, delete-orphan')

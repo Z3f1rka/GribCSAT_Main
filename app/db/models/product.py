@@ -10,7 +10,7 @@ class Product(Base):
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True, index=True)
     link: Mapped[str] = mapped_column(String, nullable=False)
     title: Mapped[str] = mapped_column(String, nullable=False)
-    # type orm to type.id
+    type_id: Mapped[int] = mapped_column(BigInteger, ForeignKey("types.id", ondelete="CASCADE"))
     article: Mapped[str] = mapped_column(String, nullable=False)
     file: Mapped[str]
     shop_id: Mapped[int] = mapped_column(BigInteger, ForeignKey("shops.id", ondelete="CASCADE"))
