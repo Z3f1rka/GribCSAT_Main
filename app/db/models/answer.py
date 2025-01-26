@@ -10,3 +10,4 @@ class Answer(Base):
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True, index=True)
     title: Mapped[str] = mapped_column(String, nullable=False)
     question_id: Mapped[int] = mapped_column(BigInteger, ForeignKey("questions.id", ondelete="CASCADE"))
+    user_answer_id = relationship('UserAnswer', back_populates='answer_id', cascade='all, delete-orphan')
