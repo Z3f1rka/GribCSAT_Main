@@ -4,10 +4,9 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from app.db.database import Base
 
 
-class Questions(Base):
-    __tablename__ = "questions"
+class Answer(Base):
+    __tablename__ = "answers"
 
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True, index=True)
-    survey_id: Mapped[int] = mapped_column(BigInteger, ForeignKey("products.id", ondelete="CASCADE"))
     title: Mapped[str] = mapped_column(String, nullable=False)
-    answer_id = relationship('Answer', back_populates='question_id', cascade='all, delete-orphan')
+    question_id: Mapped[int] = mapped_column(BigInteger, ForeignKey("questions.id", ondelete="CASCADE"))
